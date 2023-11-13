@@ -10,8 +10,8 @@ const OPTIONS = {
     reconnectPeriod: 1000
 };
 
-//const connectUrl = `mqtt://${host}:${port}`;
-const connectUrl = 'mqtt://brokergrupo6.ddns.net:1883';
+const connectUrl = `mqtt://${host}:${port}`;
+//const connectUrl = 'mqtt://brokergrupo6.ddns.net:1883';
 const chatGPTReqTopic = "chatgpt/request/+";
 const client = mqtt.connect(connectUrl, OPTIONS);
 
