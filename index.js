@@ -1,5 +1,5 @@
-import { create } from 'axios';
-import { connect } from 'mqtt';
+const axios = require('axios');
+const mqtt = require('mqtt');
 const host = "brokergrupo6.ddns.net";
 const port = "1883";
 const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
@@ -15,13 +15,13 @@ const OPTIONS = {
 const connectUrl = `mqtt://${host}:${port}`;
 //const connectUrl = 'mqtt://brokergrupo6.ddns.net:1883';
 const chatGPTReqTopic = "chatgpt/request/+";
-const client = connect(connectUrl, OPTIONS);
+const client = mqtt.connect(connectUrl, OPTIONS);
 
 // Add your OpenAI API key to your environment variables in .env
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 let messages = []; // Store conversation history
 const maxMessageCount = 10;
-const http = create({
+const http = axios.create({
     baseURL: "https://api.openai.com/v1/chat",
     headers: {
         "Content-Type": "application/json",
