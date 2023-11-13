@@ -1,3 +1,5 @@
+const axios = require('axios');
+const mqtt = require('mqtt');
 const host = "brokergrupo6.ddns.net";
 const port = "1883";
 const clientId = `mqtt_${Math.random().toString(16).slice(3)}`;
