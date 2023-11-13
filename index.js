@@ -7,7 +7,7 @@ const OPTIONS = {
     connectTimeout: 4000,
     username: " ",
     password: " ",
-    reconnectPeriod: 1000,
+    reconnectPeriod: 1000
 };
 
 //const connectUrl = `mqtt://${host}:${port}`;
